@@ -18,7 +18,7 @@ const apiVersion = packageInfo.version
 const app = express();
 
 app.get('/', (req: any, res: any) => {
-  return res.status(200).json({message: `Api-Version ${apiVersion}`});
+  return res.status(200).json({message: `Api-Version v-${apiVersion}`});
 })
 
 exports.app = functions.https.onRequest(app);
