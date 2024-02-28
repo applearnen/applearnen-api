@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "applearnen-api"
+    "default": "applearnen-api",
+    "_dev": "applearnen-api-dev",
+    "_test": "applearnen-api-test",
+    "_prod": "applearnen-api-dev",
+    "_comment": "Change the default value for the environment value that you need to use."
   }
 }
