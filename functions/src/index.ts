@@ -9,17 +9,18 @@
 
 // import {onRequest} from "firebase-functions/v2/https";
 // import * as logger from "firebase-functions/logger";
-const express  = require('express');
+const express = require('express');
 const functions = require('firebase-functions');
 const path = require('path');
 const packageInfo = require(path.join(__dirname, '..', 'package.json'));
-const apiVersion = packageInfo.version
+const apiVersion = packageInfo.version;
 
 const app = express();
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 app.get('/', (req: any, res: any) => {
   return res.status(200).json({message: `Api-Version dev V-${apiVersion}`});
-})
+});
 
 exports.app = functions.https.onRequest(app);
 
