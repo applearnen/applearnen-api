@@ -14,22 +14,23 @@ const functions = require('firebase-functions');
 const path = require('path');
 const packageInfo = require(path.join(__dirname, '..', 'package.json'));
 const apiVersion = packageInfo.version;
-const admin = require('firebase-admin');
+import {db} from './config/firebase';
+// const admin = require('firebase-admin');
 
 const app = express();
 
-import * as credential from './permissions/credential.json';
+// import * as credential from './permissions/credential.json';
 // const serviceAccount = require('./permissions/credentials.json');
 // const serviceAccount2 = require('./credential.json');
 
 // console.log(credential);
 
-admin.initializeApp({
-// eslint-disable-next-line max-len
-  credential: admin.credential.cert(credential),
-});
+// admin.initializeApp({
+// // eslint-disable-next-line max-len
+//   credential: admin.credential.cert(credential),
+// });
 
-const db = admin.firestore();
+// const db = admin.firestore();
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 app.post('/api/verbs/add', async (req: any, res: any) => {
